@@ -1,8 +1,6 @@
 ---
-layout: default
-title: "Happy Jekylling!"
+layout: templ
+title: Home
 ---
 
-## You're ready to go! this is a test
 
-Start developing your Jekyll website -------------.
