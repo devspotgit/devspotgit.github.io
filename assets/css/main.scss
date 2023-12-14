@@ -3,6 +3,66 @@
 
 body{
     margin:0;
+    min-height:100vh;
+    display:grid;
+    grid-template-columns: 120px auto;
 }
+
+.menu_bar{
+    display:flex;
+    justify-content:space-between;
+    height:0;
+    overflow:hidden;
+    position:sticky;
+    top:0;
+}
+
+.side_bar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:120px;
+    display:flex;
+    flex-direction:column;
+    height:100vh;
+}
+
+.cat_list{
+    flex-grow:1;
+    display:flex;
+    flex-direction:column;
+    border:1px solid black;
+}
+
+.title{
+    border:1px solid black;
+}
+
+
+@media(max-width:500px){
+
+    .menu_bar{
+        height:auto;
+    }
+
+    .side_bar{
+        display:contents;
+    }
+
+    .title{
+        display:none;
+    }
+
+    .cat_list{
+        height:100vh;
+        display:none;
+    }
+
+    .menu_wrapper:hover .side_bar .cat_list{
+            display:flex;
+    }
+
+}
+
 
 

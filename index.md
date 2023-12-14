@@ -1,6 +1,6 @@
 ---
 layout: templ
-title: Home
+type: home
 ---
 
 
