@@ -1,9 +1,0 @@
-<div class="cat_list">
-    {% for cat in site.post_categories %}
-        {% if cat == page.cat %}
-            <a class="cat acive" href="{{cat.url}}">{{cat.cat}}</a>
-        {% else %}
-            <a class="cat" href="{{cat.url}}">{{cat.cat}}</a>
-        {% endif %}
-    {% endfor %}
-</div>
