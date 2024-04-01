@@ -1,0 +1,84 @@
+
+
+
+
+form1{
+    display:inline-block;
+    background:rgb(225, 227, 220);
+    border-radius:5px;
+    box-shadow: 2px 2px 5px 2px grey;
+}
+
+form1 form > span{
+    text-align:center;
+    font-size:2.2rem;
+    font-weight:bold;
+    padding-bottom:20px;
+    color:grey;
+}
+
+
+form1 form{
+    width:300px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding:20px;
+}
+
+form1 form > *:not(form1 form >:last-child){
+    border-bottom:1px solid rgb(190, 189, 189);
+}
+
+form1 .info  div{
+    display:flex;
+    height:30px;
+    box-shadow:1px 1px 4px 1px grey;
+    border-radius:7px;
+}
+
+form1 .info span{
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   padding-inline:20px;
+   background:blue;
+   border-radius:7px 0 0 7px;
+   color:white;
+  
+}
+
+form1 .info input{
+    flex-grow:1;
+    border-radius:0 7px 7px 0;
+    border-width:0;
+    color:grey;
+}
+
+form1 .info input::placeholder{
+    color:grey;
+}
+
+
+form1 .info{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding-bottom:20px;
+}
+
+form1 form > input{
+    color:white;
+    padding:10px;
+    background:blue;
+    border-width:0;
+    border-radius:7px;
+    font-weight:bold;
+    font-size:1.1rem;
+    cursor:pointer;
+}
+
+
+
+
+
