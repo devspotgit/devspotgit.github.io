@@ -5,7 +5,7 @@
 function html(data){
 
     return `
-        <form action=${data.link||''}>
+        <form action="${data.link||''}">
             <span>${data.title||'Registration'}</span>
             <div class="info">
                 <div class="email">
