@@ -1,0 +1,110 @@
+
+
+
+
+
+
+
+
+:root{
+    --icon-color:grey;
+    --input-background:rgb(207, 202, 202);
+    --button-background:purple;
+}
+
+
+contact-form-1 form > :first-child{ /* form title*/
+    font-size:1.5rem;
+    font-weight:bold;
+    font-family:serif;
+    background:white;
+}
+
+
+contact-form-1{ /* form wrapper style*/
+    display:block;
+    width:250px;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+contact-form-1 form{ /* form style*/
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+contact-form-1 form > :nth-child(2)::before{ /*name icon*/
+    font-family:bootstrap-icons;
+    content:"\F4DA";
+    color:var(--icon-color);
+}
+
+contact-form-1 form > :nth-child(3)::before{ /*email icon*/
+    font-family:bootstrap-icons;
+    content:"\F32C";
+    color:var(--icon-color);
+}
+
+contact-form-1 form > div:not(:nth-child(4)){ /*name and email section*/
+    display:flex;
+    gap:10px;
+    border-radius:20px;
+    background:var(--input-background);
+    padding:10px;
+}
+
+contact-form-1 form > div input{ /*name and email input*/
+    flex-grow:1;
+    border-width:0px;
+    color:var(--icon-color);
+    font-weight:bold;
+    outline-width:0px;
+    background:transparent;
+    font-family: serif;
+    font-size:1rem;
+}
+
+contact-form-1 form > :nth-child(4){ /*textarea section*/
+    position:relative;
+} 
+
+contact-form-1 form > :nth-child(4) span{ /*textarea placeholder*/
+    position:absolute;
+    font-size:1rem;
+    font-family: serif;
+    font-weight:bold;
+    top:10px;
+    left:10px;
+    color:var(--icon-color)
+}
+
+contact-form-1 form textarea{
+    border-width:0px;
+    background:var(--input-background);
+    border-radius:10px;
+    height:80px;
+    font-weight:bold;
+    outline-width:0px;
+    color:var(--icon-color);
+    font-size:1rem;
+    font-family: serif;
+    width:100%;
+    padding:10px;
+    box-sizing: border-box;
+}
+
+contact-form-1 form > :last-child{ /* submit button*/
+    background:var(--button-background);
+    padding:10px;
+    border-width:0px;
+    color:white;
+    border-radius:20px;
+    cursor:pointer;
+}
+
+
+
+
+
+
