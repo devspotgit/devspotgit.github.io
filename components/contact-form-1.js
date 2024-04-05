@@ -5,76 +5,83 @@
 /************css classes************/
 
 
-const wrapperLayout=`
+const wrapperStyle =`
     width:300px;
     display:block;
 `
 
 
-const formLayout=`
+const formSectionStyle=`
     display:flex;
     flex-direction:column;
     gap:10px;
 `
 
-const titleLayout=`
+const titleStyle=`
     margin-bottom:20px;
-`
-
-const titleTheme=`
     font-family:arial;
     font-weight:bold;
     font-size:1.5rem;
 `
 
-const nameAreaLayout=`
+
+const nameSectionStyle=`
     display:flex;
     padding:10px;
-`
-
-const emailAreaLayout=nameAreaLayout
-
-const nameAreaTheme=`
     background:rgb(237, 234, 230);
     border-radius:20px;
 `
+const emailSectionStyle=nameSectionStyle
 
-const emailAreaTheme=nameAreaTheme
 
-const nameIconTheme=`
+const nameInputSectionStyle=`
+    position:relative;
+`
+const emailInputSectionStyle=nameInputSectionStyle
+
+const namePlaceholderStyle=`
+    position:absolute;
+    top:4px;
+    left:0;
+    color:rgb(156, 154, 152);
+    font-family:arial;
+    font-weight:bold;
+    font-size:0.8rem;
+`
+const emailPlaceholderStyle=namePlaceholderStyle
+
+
+const nameIconStyle=`
     background:rgb(163, 161, 155);
     mask:url(/devspot/images/person.svg) no-repeat center;
-`
-const nameIconLayout=`
-    width:20px;
+    width:30px;
     height:20px;
 `
-const emailIconLayout=nameIconLayout
 
-const emailIconTheme=`
-    background:rgb(156, 154, 152);
+const emailIconStyle=`
     mask:url(/devspot/images/enveloppe.svg) no-repeat center;
+    background:rgb(163, 161, 155);
+    width:30px;
+    height:20px;
 `
 
-const inputNameTheme=`
+
+const nameInputStyle=`
     border-width:0px;
     background:transparent;
     color:rgb(156, 154, 152);
     font-family:arial;
     font-weight:bold;
     outline-width:0px;
-`
-
-const inputEmailTheme=inputNameTheme
-
-const inputNameLayout=`
+    font-size:0.8rem;
     flex-grow:1;
     height:20px;
 `
+const emailInputStyle=nameInputStyle
 
-const inputEmailLayout=inputNameLayout;
 
-const textAreaTheme=`
+
+const textAreaStyle=`
     background:rgb(237, 234, 230);
     border-radius:10px;
     border-width:0px;
@@ -82,19 +89,15 @@ const textAreaTheme=`
     font-weight:bold;
     color:rgb(156, 154, 152);
     outline-width:0px;
-`
-
-const textAreaLayout=`
     height:90px;
     margin-bottom:20px;
     padding:10px;
+    font-size:0.8rem;
 `
 
-const submitLayout=`
+
+const submitStyle=`
     padding:10px;
-`
-
-const submitTheme=`
     border-width:0px;
     color:white;
     font-weight:bold;
@@ -103,38 +106,53 @@ const submitTheme=`
     cursor:pointer;
 `
 
-// const inputNamePlaceholderTheme=`
-//     color:rgb(156, 154, 152);
-// `
 
-// const inputEmailPlaceholderTheme=inputNamePlaceholderTheme
 
 
 function html(data){
     return `
-        <form action="${data.link||''}" style="${formLayout}">
-            <span style="${titleTheme}${titleLayout}">${data.title||'Get in touch'}</span>
-            <div style="${nameAreaLayout}${nameAreaTheme}">
-                <div style="${nameIconTheme}${nameIconLayout}"></div>
-                <input type="text" placeholder="Name" style="${inputNameLayout}${inputNameTheme}" name="name" required>
+        <form action="${data.link||''}" style="${formSectionStyle}" formSection>
+            <span style="${titleStyle}" title>Get in touch</span>
+            <div style="${nameSectionStyle}" nameSection>
+                <div style="${nameIconStyle}" nameIcon></div>
+                <div style="${nameInputSectionStyle}" nameInputSection>
+                    <span style="${namePlaceholderStyle}" namePlaceholder>Name</span>
+                    <input style="${nameInputStyle}" type="text" name="name" nameInput>
+                </div>
             </div>
-            <div style="${emailAreaLayout}${emailAreaTheme}">
-                <div style="${emailIconTheme}${emailIconLayout}"></div>
-                <input type="email" placeholder="Email" style="${inputEmailLayout}${inputEmailTheme}" name="email" required>
+            <div style="${emailSectionStyle}" emailSection>
+                <div style="${emailIconStyle}" emailIcon></div>
+                <div style="${emailInputSectionStyle}" emailInputSection>
+                    <span style="${emailPlaceholderStyle}" emailPlaceholder>Email</span>
+                    <input style="${emailInputStyle}" type="email" name="email" emailInput>
+                </div>
             </div>
-            <textarea style="${textAreaTheme}${textAreaLayout}" name="message">Message</textarea>
-            <input type="submit" value="Send" style="${submitLayout}${submitTheme}">
+            <textarea style="${textAreaStyle}" name="message" textArea>Message</textarea>
+            <input style="${submitStyle}" type="submit" value="Send" style="" submit>
         </div>
     `
 }
 
 
 
+
 export default function(){
     const all = document.querySelectorAll('contact-form-1').forEach((e)=>{
-        e.style=wrapperLayout
+        e.style=wrapperStyle
         const data = JSON.parse(e.getAttribute('data')||'{}')
         e.innerHTML=html(data)
+        e.querySelector('[nameInput]').addEventListener('focusin', ()=>{
+            e.querySelector('[namePlaceholder]').style.display="none"
+        })
+        e.querySelector('[nameInput]').addEventListener('focusout', (event)=>{
+            if(event.target.value=="") e.querySelector('[namePlaceholder]').style.display="inline"
+        })
+        e.querySelector('[emailInput]').addEventListener('focusin', ()=>{
+            e.querySelector('[emailPlaceholder]').style.display="none"
+        })
+        e.querySelector('[emailInput]').addEventListener('focusout', (event)=>{
+            if(event.target.value=="") e.querySelector('[emailPlaceholder]').style.display="inline"
+        })
     })
 }
 
