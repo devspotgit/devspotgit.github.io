@@ -28,15 +28,10 @@ export default function(){
         const data = JSON.parse(e.getAttribute('data')||'{}')
         e.innerHTML=html(data)
 
-        //event textarea focus in
-        e.querySelector('textarea').addEventListener('focusin', event=>{
-            e.querySelector('form > :nth-child(4) span').style.display='none'
-        })
-
-        //event textarea focus out
-        e.querySelector('textarea').addEventListener('focusout', event=>{
-            if(event.target.value=='') e.querySelector('form > :nth-child(4) span').style.display='inline'
-        })
+        setInterval(()=>{
+            if(e.querySelector('textarea').value=="") e.querySelector('form > :nth-child(4) span').style.display="inline"
+            else e.querySelector('form > :nth-child(4) span').style.display="none"
+        },100)
     })
 
 }
