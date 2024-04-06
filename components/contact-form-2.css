@@ -7,7 +7,7 @@
 
 
 contact-form-2{ /*wrapper style*/
-    width:500px;
+    width:490px;
     display:flex;
     box-shadow:2px 2px 10px 1px;
 }
@@ -71,6 +71,7 @@ contact-form-2 > div ul li::before{ /* info section all icons*/
     font-size:0.5rem;
     border-radius:10px;
     position:absolute;
+    top:2px;
     left:-30px;
     line-height:1;
 }
@@ -136,6 +137,7 @@ contact-form-2 form > :nth-child(4) div {/*message placeholder wrapper*/
 contact-form-2 form textarea{ /*message text area*/
     width:100%;
     font-family:serif;
+    height:70px;
 }
 
 contact-form-2 form > :last-child{ /*submit button*/
