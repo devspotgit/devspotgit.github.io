@@ -100,7 +100,7 @@ contact-form-2 form > :nth-child(2) > div input{ /*name and email item*/
 }
 
 
-contact-form-2 form .item-section input, contact-form-2 form .item-section textarea{/*input and textarea*/
+contact-form-2 form .item-section > :not(span) {/*input and textarea*/
     border-width:0px;
     border-bottom:1px solid grey;
     outline-width:0px;
@@ -121,18 +121,6 @@ contact-form-2 form .item-section > span{
     font-weight:bold;
 }
 
-contact-form-2 form > :nth-child(4) div span{/*message placeholder*/
-    position:absolute;
-    top:2px;
-    left:2px;
-    color:grey;
-    font-size:0.8rem;
-    font-family:serif;
-}
-
-contact-form-2 form > :nth-child(4) div {/*message placeholder wrapper*/
-    position:relative;
-}
 
 contact-form-2 form textarea{ /*message text area*/
     width:100%;

@@ -1,0 +1,121 @@
+
+
+
+
+
+:root{
+    --back:rgb(31, 175, 31);
+    --input-back:rgb(211, 208, 208);
+}
+
+
+login-form-1{ /*wrapper style*/
+    display:inline-block;
+}
+
+
+input[type="radio"]{
+    display:none;
+}
+
+input[type="radio"]:checked + div[page]{/*all pages*/
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width:300px;
+    border:1px solid var(--back);
+    border-radius:10px;
+    padding-bottom:10px;
+}
+
+
+div[page]{
+    display:none;
+}
+
+
+div[page] > span:nth-child(2){ /*error message from the server*/
+    align-self:center;
+    color:red;
+    width:70%;
+    text-align: center;
+}
+
+
+div[page] > div{ /*input wrapper*/
+    align-self:center;
+    width:70%;
+    padding:10px;
+    background:var(--input-back);
+    border-radius:20px;
+    position:relative;
+}
+
+
+.error::after{
+    content:"\F332";
+    position:absolute;
+    color:red;
+    font-family:bootstrap-icons;
+    right:10px;
+    top:11px;
+}
+
+
+div[page] input:not([type="button"]){ /*input*/
+    width:100%;
+    box-sizing: border-box;
+    border-width:0px;
+    outline-width:0px;
+    background:transparent;
+    font-weight:bold;
+    color:grey;
+}
+
+
+
+div[page] input[type="button"]{ /*submitt button*/
+    align-self:center;
+    padding:10px 20px;
+    border-radius:40px;
+    background:var(--back);
+    border-width:0px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+div[page] input[type="button"] ~ label{ 
+    align-self:center;
+    color:var(--back);
+    cursor:pointer;
+}
+
+div[page] input[type="button"] ~ span{
+    align-self:center;
+    color:var(--input-back);
+}
+
+div[page="signin-page"] :nth-child(5){ /*signin-page forgot password*/
+    align-self: center;
+    width:70%;
+    text-align: right;
+    color:var(--back);
+    cursor:pointer;
+}
+
+div[page] > :first-child{ /*page title*/
+    text-align: center;
+    padding:20px;
+    background:var(--back);
+    border-radius:10px 10px 0 0;
+    color:white;
+    font-weight:bold;
+}
+
+
+
+
+
+
+

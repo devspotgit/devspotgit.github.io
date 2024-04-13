@@ -30,10 +30,7 @@ const html = (data) =>{
             </div>
             <div class="item-section">
                 <span>message</span>
-                <div>
-                    <textarea name="message" required></textarea>
-                    <span placeholder>Message</span>
-                </div>
+                <textarea name="message" placeholder="Message" required></textarea>
             </div>
             <input type="submit" value="Send Message">
         </form>
@@ -46,10 +43,6 @@ export default function(){
     document.querySelectorAll('contact-form-2').forEach(e =>{
         const data = JSON.parse(e.getAttribute('data')||'{}')
         e.innerHTML=html(data)
-        setInterval(()=>{
-            if(e.querySelector('textarea').value=="") e.querySelector('span[placeholder]').style.display="inline"
-            else e.querySelector('span[placeholder]').style.display="none"
-        },100)
     })
 }
 

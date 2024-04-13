@@ -65,19 +65,6 @@ contact-form-1 form > div input{ /*name and email input*/
     font-size:1rem;
 }
 
-contact-form-1 form > :nth-child(4){ /*textarea section*/
-    position:relative;
-} 
-
-contact-form-1 form > :nth-child(4) span{ /*textarea placeholder*/
-    position:absolute;
-    font-size:1rem;
-    font-family: serif;
-    font-weight:bold;
-    top:10px;
-    left:10px;
-    color:var(--icon-color)
-}
 
 contact-form-1 form textarea{
     border-width:0px;
