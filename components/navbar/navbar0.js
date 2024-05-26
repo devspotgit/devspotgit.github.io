@@ -1,31 +1,33 @@
 
 
+const html = (obj) => {
 
+    let items=``
 
-const html=`
+    obj.item.forEach(item => {
+        items+=`<a href="${item.link}">${item.name}</a>`
+    })
   
-    <div class="navbar-header">
-        <slot name="navbar-title"></slot>
-        <div class="label-wrapper">
-            <label for="menu"></label>
+    return `
+        <div class="navbar-header">
+            <a href="${obj.link}">${obj.title}</a>
+            <div class="label-wrapper">
+                <label for="menu"></label>
+            </div>
         </div>
-    </div>
-    <input type="checkbox" id="menu"/>
-    <div class="navbar-menu">
-        <slot name="navbar-menu-item"></slot>
-    </div>
-    
-`
+        <input type="checkbox" id="menu"/>
+        <div class="navbar-menu">${items}</div>
+    `
+}
 
-
-const css = `
+const css = (obj) =>`
 
     :host{
         display:flex;
         justify-content:space-between;
-        font-family:arial;
-        color:rgb(217, 213, 212);
-        background:rgb(41, 39, 38);
+        font-family:${obj.font};
+        color: ${obj.color[0]};
+        background: ${obj.color[1]};
     }
 
     label{
@@ -36,7 +38,7 @@ const css = `
         display:none;
     }
 
-    ::slotted(a){
+    a{
         text-decoration:none;
         color:inherit;
         padding:20px;
@@ -46,11 +48,11 @@ const css = `
         align-items:center;
     }
 
-    .navbar-menu ::slotted(a){
+    .navbar-menu a{
         font-size:1.5rem;
     }
 
-    .navbar-header ::slotted(a){
+    .navbar-header a{
         font-size:3rem;
     }
 
@@ -58,14 +60,14 @@ const css = `
         display:flex;
     }
 
-    .navbar-menu ::slotted(:hover){
-        color:rgb(41, 39, 38);
-        background:rgb(217, 213, 212);
+    .navbar-menu a:hover{
+        color: ${obj.color[1]};
+        background: ${obj.color[0]};
     }
 
 
 
-    @media(max-width:600px){
+    @media(max-width:700px){
 
         .navbar-header{
             display:flex;
@@ -84,13 +86,13 @@ const css = `
             flex-direction:column;
             justify-content:center;
             align-items:center;
-            background:rgb(110, 107, 105);
+            background: ${obj.color[2]};
         }
 
         label{
             display:block;
             padding:20px;
-            background:rgb(217, 213, 212);
+            background:${obj.color[0]};
             mask-image: url("https://img.icons8.com/ios-glyphs/30/menu--v1.png");
             mask-repeat: no-repeat;
             mask-position: center;
@@ -108,28 +110,43 @@ const css = `
             max-height:500px;
         }
 
-
     }
 
 `
 
 
-class navbarDropdown extends HTMLElement{
+class navbar0 extends HTMLElement{
 
     constructor(){
         super()
     }
 
     connectedCallback(){
+
+        const obj={color:[], item:[]}
+
+        obj.color.push(this.getAttribute('color-0')||'rgb(217, 213, 212)')
+        obj.color.push(this.getAttribute('color-1')||'rgb(41, 39, 38)')
+        obj.color.push(this.getAttribute('color-2')||' rgb(110, 107, 105)')
+        obj.title=this.getAttribute('title')||'Title'
+        obj.link=this.getAttribute('link')||'/'
+        obj.font=this.getAttribute('font')||'Arial'
+
+        this.querySelectorAll('item').forEach(item => {
+            obj.item.push({name: item.getAttribute('name')||'item', link: item.getAttribute('link')||'/'})
+        })
+
         const sheet = new CSSStyleSheet()
-        sheet.replaceSync(css)
+        sheet.replaceSync(css(obj))
         const shadow = this.attachShadow({mode:'open'})
         shadow.adoptedStyleSheets = [sheet]
-        shadow.innerHTML=html
+        shadow.innerHTML=html(obj)
+
+        
     }
 
 }
 
-customElements.define('navbar-dropdown', navbarDropdown)
+customElements.define('navbar-0', navbar0)
 
 
