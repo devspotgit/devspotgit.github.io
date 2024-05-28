@@ -9,20 +9,22 @@ const html = (obj) => {
     })
   
     return `
-        <div class="navbar-header">
-            <a href="${obj.link}">${obj.title}</a>
-            <div class="label-wrapper">
-                <label for="menu"></label>
+        <div class="wrapper">
+            <div class="navbar-header">
+                <a href="${obj.link}">${obj.title}</a>
+                <div class="label-wrapper">
+                    <label for="menu"></label>
+                </div>
             </div>
+            <input type="checkbox" id="menu"/>
+            <div class="navbar-menu">${items}</div>
         </div>
-        <input type="checkbox" id="menu"/>
-        <div class="navbar-menu">${items}</div>
     `
 }
 
 const css = (obj) =>`
 
-    :host{
+    .wrapper{
         display:flex;
         justify-content:space-between;
         font-family:${obj.font};
@@ -74,7 +76,7 @@ const css = (obj) =>`
             justify-content:space-between;
         }
 
-        :host{
+        .wrapper{
             flex-direction:column;
             justify-content:flex-start;
         }
@@ -128,6 +130,7 @@ class navbar0 extends HTMLElement{
         obj.color.push(this.getAttribute('color-0')||'rgb(217, 213, 212)')
         obj.color.push(this.getAttribute('color-1')||'rgb(41, 39, 38)')
         obj.color.push(this.getAttribute('color-2')||' rgb(110, 107, 105)')
+
         obj.title=this.getAttribute('title')||'Title'
         obj.link=this.getAttribute('link')||'/'
         obj.font=this.getAttribute('font')||'Arial'
@@ -142,7 +145,6 @@ class navbar0 extends HTMLElement{
         shadow.adoptedStyleSheets = [sheet]
         shadow.innerHTML=html(obj)
 
-        
     }
 
 }
