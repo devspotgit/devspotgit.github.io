@@ -67,8 +67,6 @@ const css = (obj) =>`
         background: ${obj.color[0]};
     }
 
-
-
     @media(max-width:700px){
 
         .navbar-header{
@@ -149,6 +147,11 @@ class navbar0 extends HTMLElement{
 
 }
 
-customElements.define('navbar-0', navbar0)
+function navbar0Def(){
+    customElements.define('navbar-0', navbar0)
+}
+
+
+export default navbar0Def
 
 

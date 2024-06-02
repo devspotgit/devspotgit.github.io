@@ -26,11 +26,12 @@ const html = ()=>`
 
 
 const css = (obj) =>`
+
     .wrapper{
         display:flex;
         flex-direction:column;
         gap:20px;
-        max-width:600px;
+        /*max-width:600px;*/
         font-family:${obj.font};
         color:${obj.color[0]};
         background:${obj.color[1]};
@@ -136,14 +137,7 @@ const css = (obj) =>`
 `
 
 
-
-
-
-
-
-
 class contactForm0 extends HTMLElement{
-
 
     constructor(){
         super()
@@ -168,8 +162,10 @@ class contactForm0 extends HTMLElement{
             let name=shadow.querySelector('input[name="name"]').value
             let email=shadow.querySelector('input[name="email"]').value
             let message=shadow.querySelector('textarea').value
+
+            fetch(obj.link+'?name='+name+'&email='+email+'&message='+message)
             
-            console.log('I was hit...'+' '+name+' '+email+' '+message)
+            //console.log(obj.link+'?name='+name+'&email='+email+'&message='+message)
         })
         
     }
@@ -177,7 +173,16 @@ class contactForm0 extends HTMLElement{
 }
 
 
-customElements.define("contact-form-0", contactForm0)
+function contactForm0Def(){
+    customElements.define("contact-form-0", contactForm0)
+}
+
+export default contactForm0Def
+
+
+
+
+
 
 
 
