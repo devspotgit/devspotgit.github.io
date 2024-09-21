@@ -59,7 +59,6 @@ cpos_user_support_job_details+=("Participated on weekly meetings")
 
 
 
-
 declare -A computer_science
 computer_science[school_name]="University of Ottawa"
 computer_science[program]="Bachelor degree in Computing Technology"
@@ -73,6 +72,12 @@ electrical_engineering[program]="Bachelor degree in Electrical engineering"
 electrical_engineering[start_date]="09/2016"
 electrical_engineering[school_name]="05/2023"
 
+
+declare -A personal_info
+personal_info[name]="Patrick Tadie"
+personal_info[phone]="647-571-4366"
+personal_info[email]="jpatricktadie@gmail.com"
+personal_info[address]="23 Impasse du Sillon, Gatineau, Quebec"
 
 
 
