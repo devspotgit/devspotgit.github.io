@@ -1,10 +1,11 @@
-
+#!/bin/bash
 
 
 declare -a skills
 skills+=("Computer Netwotking")
 skills+=("Analytical Skills")
 skills+=("Linux/Unix")
+skills+=("Windows")
 skills+=("C++")
 skills+=("Java")
 skills+=("Team Work")
@@ -68,9 +69,9 @@ computer_science[end_date]="05/2023"
 
 declare -A electrical_engineering
 electrical_engineering[school_name]="University of Ottawa"
-electrical_engineering[program]="Bachelor degree in Electrical engineering"
+electrical_engineering[program]="Bachelor degree in Electrical Engineering"
 electrical_engineering[start_date]="09/2016"
-electrical_engineering[school_name]="05/2023"
+electrical_engineering[end_date]="05/2023"
 
 
 declare -A personal_info
@@ -78,7 +79,12 @@ personal_info[name]="Patrick Tadie"
 personal_info[phone]="647-571-4366"
 personal_info[email]="jpatricktadie@gmail.com"
 personal_info[address]="23 Impasse du Sillon, Gatineau, Quebec"
-
+personal_info[summary]="Enthusiastic and detail-oriented Electronics Engineering graduate with a solid foundation in circuit
+design, PCB layout, and firmware development. Eager to contribute technical skills and academic
+knowledge to an entry-level Electronic Designer position. Adept at utilizing industry-standard tools for
+schematic capture and PCB layout. Proven ability to collaborate in a team environment, strong
+problem-solving skills, and a commitment to continuous learning. Excited to apply theoretical
+understanding gained through coursework to real-world electronic design challenges."
 
 
 

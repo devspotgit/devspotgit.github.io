@@ -1,8 +1,192 @@
 
 
 
-h1, h2{
- color:red;
+
+body{
+ margin:0px;
+ font-size:0.9rem;
+ color:rgb(69, 69, 69);
+ line-height:1.6;
 }
+
+.main{
+ margin-inline:auto;
+ max-width:800px;
+ display:flex;
+ flex-direction:column;
+ min-height:100vh;
+}
+
+.main > div:nth-child(2){
+ flex-grow:1;
+}
+
+.header{
+ display:grid;
+ grid-template-columns:40% auto; 
+}
+
+.personal-info{
+ background:rgb(247, 217, 84);
+ display:flex;
+ flex-direction:column;
+ padding:10px;
+ gap:10px;
+}
+
+.personal-info > span{
+ text-transform:uppercase;
+ font-weight:bold;
+ font-size:1.8rem;
+ line-height:1.2;
+}
+
+.personal-info > div{
+ display:flex;
+ flex-direction:column;
+ gap:5px;
+ font-size:0.8rem;
+}
+
+.personal-info > div > span{
+ font-weight:bold;
+ color:grey;
+ display:flex;
+ gap:2px;
+ align-items:center;
+}
+
+.personal-info > div > span::before{
+ content:"";
+ width:30px;
+ height:30px;
+ background:grey;
+ mask-repeat:no-repeat;
+ mask-position:center;
+ mask-size:60%;
+}
+
+.personal-info > div > span:first-child::before{
+ mask-image:url("https://img.icons8.com/material-rounded/24/new-post.png");
+}
+
+.personal-info > div > span:nth-child(2)::before{
+ mask-image:url("https://img.icons8.com/material-outlined/24/phone.png");
+}
+
+.personal-info > div > span:last-child::before{
+ mask-image:url("https://img.icons8.com/material-rounded/24/address.png");
+}
+
+.summary{
+ background:rgb(247, 230, 228);
+ padding:10px;
+}
+
+.summary > span{
+ font-weight:bold;
+ text-transform:uppercase;
+ font-size:1.1rem;
+}
+
+.skills-educations{
+ background:rgb(247, 230, 228);
+ padding:10px;
+}
+
+.skills > span{
+ text-transform:uppercase;
+ font-size:1.1rem;
+ font-weight:bold;
+}
+
+.skills > ul{
+ display:flex;
+ gap:5px;
+ flex-direction:column;
+ list-style-type:none;
+ padding:0px;
+}
+
+.skills > ul > li{
+ font-weight:bold;
+ color:grey;
+}
+
+.educations > ul > li > span:first-child{
+ font-weight:bold;
+}
+
+.educations > ul > li > span:nth-child(2){
+ font-weight:bold;
+ color:grey;
+}
+
+.educations > ul > li > span:last-child{
+ font-size:0.7rem;
+ font-weight:bold;
+ color:grey;
+}
+
+.educations > span{
+ text-transform:uppercase;
+ font-size:1.1rem;
+ font-weight:bold;
+}
+
+.educations > ul{
+ list-style-type:none;
+ display:flex;
+ flex-direction:column;
+ gap:5px;
+ padding:0px;
+}
+
+.educations > ul > li{
+ display:flex;
+ flex-direction:column;
+}
+
+
+.body{
+ display:grid;
+ grid-template-columns:40% auto;
+}
+
+
+.works{
+ padding:10px;
+ display:flex;
+ flex-direction:column;
+ gap:10px;
+}
+
+.works > span{
+ text-transform:uppercase;
+ font-size:1.1rem;
+ font-weight:bold;
+}
+
+.works > div > div{
+ display:flex;
+ flex-direction:column;
+ gap:5px;
+}
+
+.works > div > div > span:first-child{
+ font-weight:bold;
+}
+
+.works > div > div > span:nth-child(2){
+ font-size:bold;
+ color:grey;
+ font-size:0.7rem;
+}
+
+
+
+
+
+
 
 
