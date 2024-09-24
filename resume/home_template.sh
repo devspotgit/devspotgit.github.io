@@ -55,7 +55,7 @@ home(){
   <html>
    <head>
     <title>${ref[title]}</title>
-    <link rel=\"stylesheet\" href=\"/style.css\"/>
+    <link rel=\"stylesheet\" href=\"/resume/style.css\"/>
    </head>
    <body>
     <div class=\"main\">

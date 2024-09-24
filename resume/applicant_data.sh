@@ -10,8 +10,8 @@ skills+=("C++")
 skills+=("Java")
 skills+=("Team Work")
 skills+=("Circuit Design")
-Skills+=("Simulation Tools")
-Skylls+=("Python")
+skills+=("Simulation Tools")
+skills+=("Python")
 
 
 declare -a educations
@@ -79,12 +79,7 @@ personal_info[name]="Patrick Tadie"
 personal_info[phone]="647-571-4366"
 personal_info[email]="jpatricktadie@gmail.com"
 personal_info[address]="23 Impasse du Sillon, Gatineau, Quebec"
-personal_info[summary]="Enthusiastic and detail-oriented Electronics Engineering graduate with a solid foundation in circuit
-design, PCB layout, and firmware development. Eager to contribute technical skills and academic
-knowledge to an entry-level Electronic Designer position. Adept at utilizing industry-standard tools for
-schematic capture and PCB layout. Proven ability to collaborate in a team environment, strong
-problem-solving skills, and a commitment to continuous learning. Excited to apply theoretical
-understanding gained through coursework to real-world electronic design challenges."
+personal_info[summary]="Motivated and tech-savvy individual seeking an entry-level IT position. Strong foundation in troubleshooting, system setup, and basic network configuration. Eager to apply problem-solving skills and attention to detail to support IT infrastructure and ensure smooth day-to-day operations. Highly adaptable and quick to learn new technologies, with a passion for improving efficiency and user experiences through technology. Committed to delivering exceptional technical support and contributing to a collaborative IT environment."
 
 
 
