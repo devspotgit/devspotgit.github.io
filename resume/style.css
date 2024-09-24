@@ -90,7 +90,7 @@ body{
 }
 
 .skills-educations{
- background:rgb(247, 230, 228);
+ background:rgb(245, 240, 233);
  padding:10px;
 }
 
@@ -185,7 +185,23 @@ body{
 
 
 
+@media(max-width:650px){
+ 
+ .header{
+   display:flex;
+   flex-direction:column;
+ }
 
+ .body{
+   display:flex;
+   flex-direction:column;
+ }
+
+ .body > div:last-child{
+  flex-grow:1;
+ }
+
+}
 
 
 
