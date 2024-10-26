@@ -79,7 +79,7 @@ personal_info[name]="Patrick Tadie"
 personal_info[phone]="647-571-4366"
 personal_info[email]="jpatricktadie@gmail.com"
 personal_info[address]="23 Impasse du Sillon, Gatineau, Quebec"
-personal_info[summary]="Motivated and tech-savvy individual seeking an entry-level IT position. Strong foundation in troubleshooting, system setup, and basic network configuration. Eager to apply problem-solving skills and attention to detail to support IT infrastructure and ensure smooth day-to-day operations. Highly adaptable and quick to learn new technologies, with a passion for improving efficiency and user experiences through technology. Committed to delivering exceptional technical support and contributing to a collaborative IT environment."
+personal_info[summary]="Motivated and technically adept recent Electrical Engineering graduate with a strong academic foundation in circuit design, power systems, and control systems. Proficient in CAD, MATLAB, and simulation software, with hands-on experience gained through academic projects and internships focused on designing, testing, and optimizing electrical circuits and systems. Known for strong analytical skills, problem-solving abilities, and a dedication to learning and growing in the field. Eager to bring a passion for innovation, attention to detail, and a commitment to safety and quality to a dynamic engineering team."
 
 
 
