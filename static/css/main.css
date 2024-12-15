@@ -1,0 +1,72 @@
+
+
+@import url("/static/css/header.css");
+@import url("/static/css/side.css");
+@import url("/static/css/footer.css");
+@import url("/static/css/post_list.css");
+@import url("/static/css/post_card.css");
+@import url("/static/css/blog_content.css");
+@import url("/static/css/template_content.css");
+
+
+:root{
+    --platinum: #eaeaeaff;
+    --byzantium: #893168ff;
+    --violet-jtc: #4a1942ff;
+    --dark-purple: #2e1c2bff;
+    --black: #050404ff;
+}
+
+body{
+    margin:0px;
+}
+
+
+.main{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background-color:var(--dark-purple);
+    position:relative;
+    gap:50px;
+    max-width:1300px;
+    margin-inline:auto;
+}
+
+.main > div:nth-child(2){
+    display:flex;
+    gap:30px;
+    flex-grow:1;
+    padding-inline:50px;
+}
+
+
+@media(max-width:700px){
+    .main:has(.side[open])::after{
+       content:"";
+       display:block;
+       top:0;
+       bottom:0;
+       left:0;
+       right:0;
+       background-color: rgba(0,0,0,0.7);
+       position:absolute;
+       z-index:1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

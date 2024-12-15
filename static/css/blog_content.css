@@ -1,0 +1,20 @@
+
+
+
+@scope(.blog-content){
+    :scope{
+       
+    }
+
+
+}
+
+
+@media(max-width:700px){
+    @scope(.blog-content){
+        :scope{
+            width:100%;
+        }
+    }
+}
+

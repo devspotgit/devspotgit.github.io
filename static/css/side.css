@@ -1,0 +1,79 @@
+
+
+
+@scope(.side){
+    :scope{
+        display:flex;
+        flex-direction:column;
+        gap:30px;
+        width:200px;
+    }
+    @scope(>div){
+        :scope{
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+        }
+        >span{
+            text-transform:capitalize;
+            font-size:2rem;
+            border-bottom:1px solid var(--byzantium);
+            font-weight:bold;
+        }
+        @scope(>div){
+            :scope{
+                display:flex;
+                flex-direction:column;
+                gap:10px;
+            }
+            >a{
+                text-decoration:none;
+                color:var(--platinum);
+                text-transform:capitalize;
+                font-size:1.2rem;
+            }
+        }
+    }
+}
+
+
+@media(max-width:700px){
+
+    @scope(.side){
+        :scope{
+            position:fixed;
+            top:0;
+            left:-200px;
+            box-sizing:border-box;
+            height:100vh;
+            background-color:var(--dark-purple);
+            padding:20px;
+            transition:all 0.5s;
+            z-index:2;
+        }
+        :scope[open]{
+            left:0;
+        }
+        @scope(>div){
+            :scope{
+              
+            }
+            >span{
+               
+            }
+            @scope(>div){
+                :scope{
+                    
+                }
+                >a{
+                   
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+

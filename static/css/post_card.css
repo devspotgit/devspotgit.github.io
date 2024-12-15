@@ -1,0 +1,75 @@
+
+
+
+
+
+
+@scope(.post-card){
+    :scope{
+        display:flex;
+        flex-direction:column;
+        background-image:linear-gradient(155deg, var(--byzantium), var(--violet-jtc), var(--black));
+        padding:10px;
+        border-radius:10px;
+        position:relative;
+        aspect-ratio:3/2;
+        container-type: size;
+        resize: horizontal;
+    }
+    
+    @scope(>div:first-child){
+        :scope{
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size: 12cqw;
+            background-image:linear-gradient(155deg, var(--black), var(--violet-jtc), var(--byzantium));
+            background-clip:text;
+            color:transparent;
+            font-weight:bold;
+            text-transform:capitalize;
+        }
+
+    }
+
+    @scope(>div:last-child){
+        :scope{
+            position:absolute;
+            top:0;
+            left:0;
+            bottom:0;
+            right:0;
+            display:flex;
+            flex-direction:column;
+            padding:10px;
+            gap:20px;
+        }
+
+        >span:nth-of-type(1){
+            text-transform:capitalize;
+            font-size: 5cqw;
+            color:var(--platinum);
+        }
+        >span:nth-of-type(2){
+            flex-grow:1;
+            font-size: 8cqw;
+            text-transform:capitalize;
+            font-weight:bold;
+        }
+        >a{
+            text-decoration:none;
+            align-self:end;
+            color:var(--byzantium);
+            font-size: 6cqw;
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,22 @@
+
+
+
+
+@scope(.footer){
+    :scope{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        padding-block:20px;
+        border:1px solid var(--violet-jtc);
+    }
+
+    >a{
+        text-decoration:none;
+        font-size:2rem;
+        font-weight:bold;
+        color:var(--platinum);
+    }
+}
+
+

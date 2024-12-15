@@ -1,0 +1,14 @@
+
+
+
+body{
+    background-color:burlywood;
+}
+
+
+@media(max-width:600px){
+    h1{
+        color:aqua;
+    }
+}
+
