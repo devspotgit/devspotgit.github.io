@@ -1,0 +1,21 @@
+
+
+.carousel{
+    position:relative;
+    overflow:hidden;
+}
+
+
+.carousel .prev, .carousel .next, .carousel .indicator-block{
+    position:absolute;
+    z-index:1;
+}
+
+
+.slider{
+    display:flex;
+    height:100%;
+}
+
+
+

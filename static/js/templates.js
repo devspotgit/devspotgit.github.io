@@ -1,233 +1,132 @@
 
 
-import {
-    get_categories, 
-    get_category_posts, 
-    get_search_posts,
-    get_sub_categories,
-    get_tag_posts,
-    get_sub_category_posts,
-    get_post,
-    get_content,
-    get_all_posts
-} from "/static/js/api.js"
+
+import {categories, category_posts, all_posts, search_posts, post} from "/static/js/api.js"
 
 
+//template parts
 
-/************* template parts *************/
-
-async function post_content(post){
-
-    if(post.category == "blog") return await blog_content(post)
-    else if(post.category == "templates") return template_content(post)
-}
-
-function post_card(post){
-
-    const slug = post.name.split(" ").join("_")
-    let text = ""
-    if(post.category == "blog") text = "Read More"
-    else if(post.category == "templates") text = "Preview"
+function side(){
 
     return `
-        <div class="post-card">
-            <div>${post.name}</div>
-            <div>
-                <span>${post.category}</span>
-                <span>${post.name}</span>
-                <a href="/posts/${slug}">${text}</a>        
-            </div>
-        </div>
+        <div class="side"></div>
     `
 }
-
-async function blog_content(post){
-
-    let tags = ""
-    for(let i=0; i<post.tags.length; i++) tags = `${tags} <a href="/?tag=${post.tags[i]}">${post.tags[i]}</a>`
-    const slug = post.name.split(" ").join("_")
-    const content = await get_content("/posts/"+slug+"/"+slug+".html")
-
-    return `
-        <div class="blog-content">
-            <span>${post.name}</span>
-            <div>${content}</div>
-            <div>${tags}</div>  
-        </div>
-    `
-}
-
-function template_content(post){
-
-    let tags = ""
-    const slug = post.name.split(" ").join("_")
-    for(let i=0; i<post.tags.length; i++) tags = `${tags} <a href="/?tag=${post.tags[i]}">${post.tags[i]}</a>`
-
-    return `
-        <div class="template-content">
-            <span>${post.name}</span>
-            <iframe src="/posts/${slug}/site/"></iframe>
-            <div>${tags}</div>
-            <div>
-                <a href="/posts/${slug}/site"></a>
-                <a href="/posts/${slug}/${slug}.zip"></a>
-            </div>
-        </div>
-    `
-}
-
 
 function header(){
 
     return `
-        <div action="/" class="header">
-            <div>
-                <a href="/">DevSpot</a>
-                <button id="menu"></button>
-            </div>
-            <form action="/">
-                <input type="text" name="key_word"/>
-                <button></button>
-            </form>
-        </div>
+        <div class="header"></div>
+    `
+}
+
+function post_header(){
+
+    return `
+        <div class="post-header"></div>
     `
 }
 
 function footer(){
 
     return `
-        <div class="footer">
-            <a href="/">DevSpot</a>
-        </div>
+        <div class="footer"></div>
     `
 }
 
-
-function post_list(posts){
-
-    let list=""
-    for(let i=0; i<posts.length; i++) list=`${list} ${post_card(posts[i])}`
+function post_list(){
 
     return `
-        <div class="post-list">${list}</div>
+        <div class="post_list"></div>
     `
 }
 
 
-function side(){
-
-    const categories = get_categories()
-    let _categories = ""
-    for(let i=0; i<categories.length; i++){
-        const sub_categories = get_sub_categories(categories[i])
-        let _sub_categories = ""
-        for(let j=0; j<sub_categories.length; j++) _sub_categories = `${_sub_categories} <a href="/?category=${categories[i]}&sub_category=${sub_categories[j]}">${sub_categories[j]}</a>`
-        _categories = `${_categories} 
-            <div>
-                <span>${categories[i]}</span>
-                <div>${_sub_categories}</div>
-            </div>
-        `
-    }
-
-    return `
-        <div class="side">
-            ${_categories}
-        </div>
-    `
-}
 
 
-/************* templates *************/
+//templates
 
 function home_page(){
 
-    const all_posts = get_all_posts()
-
     return `
-        <div class="main">
-            ${header()}
-            <div>
-                ${side()}
-                ${post_list(all_posts)}
+        <div class="home-page">
+            <div class="hero">
+                <a href="/">DevSpot</a>
+                <span>Free Html Website Template</span>
+                <a href="/all_posts">Explore Our Templates</a>
             </div>
-            ${footer()}
+            <div class="introduction">
+                <span>Sleek and modern website templates designed for businesses and individuals</span>
+                <span>High-quality, responsive website templates that are easy to customize and SEO-friendly</span>
+                <span>Explore our collection of professional website templates to create a stunning online presence</span>
+                <span>Find the perfect template to match your brand and build a website that stands out.</span>
+            </div>
+            <div class="collections">
+                <span>Explore Some Of Our Collections</span>
+                <div class="carousel">
+                    <div class="slider">
+                        <div class="slide">
+                            <span>Captivating blog templates that tell your story. Showcase your writing with elegant layouts, stunning imagery, and seamless navigation</span>
+                            <a href="/categories/blog">Blog</a>
+                        </div>
+                        <div class="slide">
+                            <span>Impress clients with stunning portfolio templates that showcase your creativity and expertise</span>
+                            <a href="/categories/portfolio">Porfolio</a>
+                        </div>
+                        <div class="slide">
+                            <span>Showcase your menu, book reservations, and build brand loyalty with visually appealing and user-friendly templates</span>
+                            <a href="/categories/restaurant">Restaurant</a>
+                        </div>
+                        <div class="slide">
+                            <span>Inspire and motivate with fitness website templates that promote your brand and attract new clients</span>
+                            <a href="/categories/fitness">Fitness</a>
+                        </div>
+                    </div>
+                    <button class="next"></button>
+                    <button class="prev"></button>
+                    <div class="indicator-block">
+                        <button class="indicator"></button>
+                        <button class="indicator"></button>
+                        <button class="indicator"></button>
+                        <button class="indicator"></button>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <form action="/search" class="search">
+                    <input type="text" placeholder="search..."/>
+                    <button></button>
+                </form>
+            </div>
         </div>
     `
 }
 
-
-function category_page(category, sub_category){
-
-    const category_posts = get_category_posts(category)
-    const sub_category_posts = get_sub_category_posts(category_posts, sub_category)
+function list_page(){
 
     return `
-      <div class="main">
-            ${header()}
-            <div>
-                ${side()}
-                ${post_list(sub_category_posts)}
-            </div>
-            ${footer()}
-        </div>
+        <div class="list-page"></div>
+    `
+}
+
+function post_page(){
+
+    return `
+        <div class="post-page"></div>
     `
 }
 
 
-async function post_page(post_name){
-
-    const post = get_post(post_name)
-
-    return `
-        <div class="main">
-            ${header()}
-            <div>
-                ${side()}
-                ${await post_content(post)}
-            </div>
-            ${footer()}
-        </div>
-    `
-}
-
-
-function tag_page(tag){
-
-    const tag_posts = get_tag_posts(tag) 
-
-    return `
-        <div class="main">
-            ${header()}
-            <div>
-                ${side()}
-                ${post_list(tag_posts)}
-            </div>
-            ${footer()}
-        </div>
-    `
-}
-
-
-function search_page(key_word){
-
-    const search_posts = get_search_posts(key_word)
-
-    return `
-        <div class="main">
-            ${header()}
-            <div>
-                ${side()}
-                ${post_list(search_posts)}
-            </div>
-            ${footer()}
-        </div>
-    `
-}
+export {home_page, list_page, post_page}
 
 
 
-export{home_page, post_page, category_page, search_page, tag_page}
+
+
+
+
+
+
 
 
 
