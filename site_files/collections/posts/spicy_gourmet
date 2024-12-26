@@ -1,12 +1,13 @@
 
 
-
 name:Spicy Gourmet
 
 url:/posts/spicy_gourmet
 
 category:restaurant
 
-template:post_page.sh
+template:post_page
+
+date:2024-08-21
 
 

@@ -1,13 +1,8 @@
 
 
-#!/bin/bash
-
 
 declare -a collecions
 
-declare -a collection_categories
-
-#parent_dir=`dirname $0`
 
 parent_dir=$1
 

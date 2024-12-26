@@ -6,7 +6,11 @@ url:/posts/morin
 
 category:resume
 
-template:post_page.sh
+template:post_page
+
+date:2024-07-12
+
+
 
 
 

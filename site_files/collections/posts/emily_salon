@@ -6,6 +6,10 @@ url:/posts/emily_salon
 
 category:beauty
 
-template:post_page.sh
+template:post_page
+
+date:2024-09-05
+
+
 
 

@@ -6,7 +6,12 @@ url:/posts/big_bite
 
 category:restaurant
 
-template:post_page.sh
+template:post_page
+
+date:2024-12-15
+
+
+
 
 
 

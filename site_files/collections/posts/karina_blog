@@ -6,7 +6,10 @@ url:/posts/karina_blog
 
 category:blog
 
-template:post_page.sh
+template:post_page
+
+date:2024-10-23
+
 
 
 

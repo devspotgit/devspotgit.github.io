@@ -6,7 +6,11 @@ url:/posts/baker_book
 
 category:portfolio
 
-template:post_page.sh
+template:post_page
+
+date:2024-10-09
+
+
 
 
 
