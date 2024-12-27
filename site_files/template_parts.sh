@@ -94,13 +94,6 @@ all_posts(){
 
 
 
-#echo ${collections[@]}
-
-#echo ${website_templates[@]}
-
-#echo ${daily_fitness[@]}
-
-
 
 
 

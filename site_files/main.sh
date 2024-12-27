@@ -9,6 +9,7 @@ src_dir=$1
 dest_dir=$2
 
 
+
 source $src_dir/api.sh $src_dir
 
 source $src_dir/template_parts.sh
@@ -17,6 +18,7 @@ source $src_dir/templates.sh
 
 
 
+#remove existing file
 
 if [ -f $dest_dir/site_map ]; then
 
@@ -27,8 +29,18 @@ if [ -f $dest_dir/site_map ]; then
 
  do
 
+  if [ $line == "/" ]; then
+   rm $dest_dir/index.html
+  else
+   rm -r $dest_dir/$line
+  fi
 
  done
+
+ IFS=$ifs
+
+ rm $dest_dir/site_map
+ touch $dest_dir/site_map
 
 else
 
@@ -39,6 +51,8 @@ fi
 
 
 
+
+#create site files
 
 for collection in  ${collections[@]};
 
@@ -56,13 +70,11 @@ do
 
   mkdir -p $dest_dir/${item_ref[url]}
 
-  echo file_content > $dest_dir/${item_ref[url]}/index.html
+  echo "$file_content" > $dest_dir/${item_ref[url]}/index.html
 
-  echo $dest_dir/${item_ref[url]} >> $dest_dir/site_map
-
+  echo ${item_ref[url]} >> $dest_dir/site_map
 
  done
-
 
 done
 

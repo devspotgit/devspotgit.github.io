@@ -39,7 +39,7 @@ do
 
   declare -n _ref=$file
 
-  ifs=IFS
+  ifs=$IFS
   IFS=$'\n'
 
   for line in `cat $parent_dir/collections/$collection/$file`;
@@ -53,6 +53,8 @@ do
 
  done
 done
+
+
 
 
 

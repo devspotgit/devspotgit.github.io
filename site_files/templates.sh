@@ -27,6 +27,7 @@ post_page(){
 
 }
 
+
 home_page(){
 
  declare -n ref=$1
@@ -45,6 +46,7 @@ home_page(){
  "
 
 }
+
 
 category_page(){
 
@@ -69,6 +71,7 @@ category_page(){
  "
 
 }
+
 
 all_post_page(){
 
