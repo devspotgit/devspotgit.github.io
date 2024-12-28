@@ -12,8 +12,7 @@ collections=(`ls $parent_dir/collections`)
 
 
 #collection all collection file in one array for each collection
-for collection in ${collections[@]};
-do
+for collection in ${collections[@]}; do
 
  declare -a $collection
 
@@ -25,13 +24,11 @@ done
 
 
 #collect all the file data in one array for each file
-for collection in ${collections[@]};
-do
+for collection in ${collections[@]}; do
 
  declare -n ref=$collection
 
- for file in ${ref[@]};
- do
+ for file in ${ref[@]}; do
 
   declare -A $file
 
@@ -39,8 +36,7 @@ do
 
   IFS=$'\n'
 
-  for line in `cat $parent_dir/collections/$collection/$file`;
-  do
+  for line in `cat $parent_dir/collections/$collection/$file`; do
 
    attribute=`echo $line | cut -d ":" -f 1`
 

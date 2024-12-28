@@ -1,6 +1,10 @@
 
 
 
+
+
+
+
 #collect posts from a category
 #accept one parameter, category name $1 - category
 #echo list of posts
@@ -8,12 +12,11 @@ category_posts(){
 
  declare -a tmp
 
- for post in ${posts[@]};
- do
+ for post in ${posts[@]}; do
 
   declare -n ref=$post
 
-  if [ ${ref[category]} -eq $1 ]; then
+  if [ ${ref[category]} == $1 ]; then
    tmp+=($post)
   fi
 
@@ -36,9 +39,9 @@ compare_posts(){
 
  declare -n ref_2=$2
 
- y_1=`echo ${ref_1[date]}|cut -d "-" -f 1`
+ declare  y_1=`echo ${ref_1[date]}|cut -d "-" -f 1`
 
- y_2=`echo ${ref_2[date]}|cut -d "-" -f 1`
+ declare y_2=`echo ${ref_2[date]}|cut -d "-" -f 1`
 
  if [ $y_1 -gt $y_2 ]; then
   return 1
@@ -47,9 +50,9 @@ compare_posts(){
   return 2
 
  elif [ $y_1 -eq $y_2 ]; then
-  m_1=`echo ${ref_1[date]}|cut -d "-" -f 2`
+  declare m_1=`echo ${ref_1[date]}|cut -d "-" -f 2`
 
-  m_2=`echo ${ref_2[date]}|cut -d "-" -f 2`
+  declare m_2=`echo ${ref_2[date]}|cut -d "-" -f 2`
 
   if [ $m_1 -gt $m_2 ]; then
    return 1
@@ -58,9 +61,9 @@ compare_posts(){
    return 2
 
   elif [ $m_1 -eq $m_2 ]; then
-   d_1=`echo ${ref_1[date]}|cut -d "-" -f 3`
+   declare d_1=`echo ${ref_1[date]}|cut -d "-" -f 3`
 
-   d_2=`echo ${ref_1[date]}|cut -d "-" -f 3`
+   declare d_2=`echo ${ref_2[date]}|cut -d "-" -f 3`
 
    if [ $d_1 -gt $d_2 ]; then
     return 1
@@ -86,7 +89,42 @@ compare_posts(){
 #echo sorted list
 sort_posts(){
 
+ declare p=(${posts[@]})
+
+ declare len=$((${#p[@]}-2))
+
+ declare resp=""
+
+ declare temp=""
 
 
+ while [ $len -ge 0 ]; do
+
+  for (( i=0; i<=$len; i++ )); do
+
+   compare_posts ${p[$i]} ${p[(($i+1))]}
+
+   resp=$?
+
+   if [ $resp -eq 1 ]; then
+
+    temp=${p[$i]}
+
+    p[$i]=${p[(($i+1))]}
+
+    p[(($i+1))]=$temp
+
+   fi
+
+  done
+
+  len=$(($len-1))
+
+ done
+
+ echo ${p[@]}
 
 }
+
+
+
