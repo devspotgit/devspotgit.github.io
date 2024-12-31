@@ -3,8 +3,6 @@
 
 
 
-
-
 #collect posts from a category
 #accept one parameter, category name $1 - category
 #echo list of posts

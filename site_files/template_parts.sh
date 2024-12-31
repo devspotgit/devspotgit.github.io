@@ -20,8 +20,7 @@ footer(){
 
  echo "
   <div class=\"footer\">
-
-
+   <a href=\"/\">DevSpot</a>
   </div>
  "
 
@@ -52,14 +51,23 @@ post_content(){
 
 side(){
 
+ declare html=""
+
+ for category in categories; do
+  declare -n ref=$category
+  html="$html <a href=\"${ref[url]}\">${ref[name]}</a>"
+ done
+
  echo "
   <div class=\"side\">
-
-
+   <span></span>
+   <div class=\"categories\">
+    $html
+   </div>
   </div>
  "
-
 }
+
 
 
 category_posts(){
@@ -69,9 +77,7 @@ category_posts(){
 
 
   </div>
-
  "
-
 }
 
 
@@ -82,9 +88,7 @@ all_posts(){
 
 
   </div>
-
  "
-
 }
 
 

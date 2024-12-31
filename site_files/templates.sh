@@ -4,7 +4,6 @@
 
 
 
-
 post_page(){
 
  declare -n ref=$1
@@ -18,8 +17,11 @@ post_page(){
    </head>
    <body>
     <div class=\"post-page\">
-     `post_header `
+     `header $1`
+     `post_header $1`
+     `side`
      `post_content $1`
+     `footer`
     </div>
    </body>
   </html>
@@ -57,11 +59,11 @@ category_page(){
   <html>
    <head>
     <link rel=\"stylesheet\" href=\"/static/css/main.css\"/>
-    <title>${ref[name]}</title>
+    <title>${ref[name]} Websites</title>
    </head>
    <body>
     <div class=\"category-page\">
-     `header`
+     `header $1`
      `side`
      `category_posts $1`
      `footer`
@@ -86,7 +88,7 @@ all_post_page(){
    </head>
    <body>
     <div class=\"all-post-page\">
-     `header`
+     `header $1`
      `side`
      `all_posts`
      `footer`
