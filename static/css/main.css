@@ -72,7 +72,7 @@
     :root{
 
         /* page */
-        --page-temp-col:minmax(350px, auto);
+        --page-temp-col:minmax(400px, auto);
 
         /* side */
         --side-pos:fixed;
@@ -89,7 +89,7 @@
         /* header */
         --header-temp-col:max-content max-content auto max-content;
         --header-col:1/-1;
-        --header-pad-inl:10px;
+        /* --header-pad-inl:10px; */
 
         /* side-open */
         --side-open-disp:initial;
