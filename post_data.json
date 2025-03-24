@@ -1,0 +1,62 @@
+
+{
+
+    "posts":[
+        {
+            "title":"Box Model",
+            "slug":"box-model",
+            "category":"css",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa sapien, laoreet sit amet consectetur tincidunt, egestas non justo.",
+            "date":"December 13, 2024"
+        },
+        {
+            "title":"Rest VS Graphql",
+            "slug":"rest-graphql",
+            "category":"web-dev",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa sapien, laoreet sit amet consectetur tincidunt, egestas non justo.",
+            "date":"October 15, 2024"
+        },
+        {
+            "title":"Flex Box",
+            "slug":"flex-box",
+            "category":"css",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa sapien, laoreet sit amet consectetur tincidunt, egestas non justo.",
+            "date":"October 04, 2024"
+        },
+        {
+            "title":"Map",
+            "slug":"map",
+            "category":"js",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris massa sapien, laoreet sit amet consectetur tincidunt, egestas non justo.",
+            "date":"May 11, 2024"
+        }
+    ],
+    
+    
+    "categories":[
+        {
+            "title":"Css",
+            "slug":"css"
+        },
+        {
+            "title":"JS",
+            "slug":"js"
+        },
+        {
+            "title":"React",
+            "slug":"react"
+        },
+        {
+            "title":"Vue",
+            "slug":"vue"
+        },
+        {
+            "title":"Web Dev",
+            "slug":"web-dev"
+        }
+    ]
+
+}    
+
+
+
