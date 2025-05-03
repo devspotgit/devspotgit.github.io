@@ -1,0 +1,79 @@
+
+
+{
+    "posts": [   
+        {
+            "title":"SQL vs NoSQL : Which One Should You Use ?",
+            "slug":"sql-vs-nosql",
+            "content":"sql_vs_nosql.html",
+            "date":"03-10-2025",
+            "category":"database",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."
+        },
+        {
+            "title":"Understanding Promises vs Async/Await in JavaScript",
+            "slug":"promises-vs-async-await",
+            "content":"promises_vs_async_await.html",
+            "date":"03-27-2025",
+            "category":"programming",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."
+        },
+        {
+            "title":"Using Prisma ORM in Node.js Projects",
+            "slug":"prisma-nodejs",
+            "content":"prisma-nodejs.html",
+            "date":"04-10-2025",
+            "category":"database",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."
+        },
+        {
+            "title":"What is OAuth ?",
+            "slug":"oauth",
+            "content":"oauth.html",
+            "date":"02-14-2025",
+            "category":"security",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."
+        },
+        {
+            "title":"How to Build a Responsive Navbar with CSS Flexbox",
+            "slug":"css-flexbox-navbar",
+            "content":"css_flexbox_navbar.html",
+            "date":"01-04-2025",
+            "category":"web-dev",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."
+        },
+        {
+            "title":"SSR vs CSR : What’s Better for Performance ?",
+            "slug":"ssr-vs-csr",
+            "content":"ssr_vs_csr.html",
+            "date":"04-25-2025",
+            "category":"web-dev",
+            "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."
+
+        }
+    ],
+
+    "categories":[
+        {
+            "title":"Security",
+            "slug":"security"
+        },
+        {
+            "title":"Web Development",
+            "slug":"web-dev"
+        },
+        {
+            "title":"Database",
+            "slug":"database"
+        },
+        {
+            "title":"Programming",
+            "slug":"programming"
+        }
+    ]
+}
+
+
+
+
+
