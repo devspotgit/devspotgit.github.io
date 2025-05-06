@@ -32,30 +32,52 @@ function categoryPosts(category, posts){
 
 
 
+function post(posts, slug){
+
+    for(const post of posts)
+        if(post.slug == slug ) return post
+}
+
+
+
+function category(categories, slug){
+
+    for(const category of categories)
+        if(category.slug == slug) return category
+}
+
+
+
 function latestPost(post1, post2){
 
-    if(parseInt(post1.date.split("-")[2], 10) > parseInt(post2.date.split("-")[2], 10)) return post1
-    else if(parseInt(post1.date.split("-")[2], 10) < parseInt(post2.date.split("-")[2], 10)) return post2
-    else if(parseInt(post1.date.split("-")[0], 10) > parseInt(post2.date.split("-")[0], 10)) return post1
-    else if(parseInt(post1.date.split("-")[0], 10) < parseInt(post2.date.split("-")[0], 10)) return post2
-    else if(parseInt(post1.date.split("-")[1], 10) > parseInt(post2.date.split("-")[1], 10)) return post1
-    else if(parseInt(post1.date.split("-")[1], 10) < parseInt(post2.date.split("-")[1], 10)) return post2
-    else return post1
+    if(parseInt(post1.date.split("-")[2], 10) > parseInt(post2.date.split("-")[2], 10)) return 1
+    else if(parseInt(post1.date.split("-")[2], 10) < parseInt(post2.date.split("-")[2], 10)) return 2
+    else if(parseInt(post1.date.split("-")[0], 10) > parseInt(post2.date.split("-")[0], 10)) return 1
+    else if(parseInt(post1.date.split("-")[0], 10) < parseInt(post2.date.split("-")[0], 10)) return 2
+    else if(parseInt(post1.date.split("-")[1], 10) > parseInt(post2.date.split("-")[1], 10)) return 1
+    else if(parseInt(post1.date.split("-")[1], 10) < parseInt(post2.date.split("-")[1], 10)) return 2
+    else return 1
 }
 
 
 
 function postSort(posts){
 
+    for(let i=1; i<posts.length; i++){        
+        for(let j=0; j<posts.length-i; j++){
+            if(latestPost(posts[j], posts[j+1]) == 2){
+                const temp = posts[j]
+                posts[j] = posts[j+1]
+                posts[j+1] = temp
+            }
+        }
+
+    }
 
 }
 
 
-module.exports = {
-    months,
-    postSort,
-    categoryPosts
-}
+export { months, postSort, categoryPosts, post, category }
 
 
 

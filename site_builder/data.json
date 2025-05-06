@@ -21,7 +21,7 @@
         {
             "title":"Using Prisma ORM in Node.js Projects",
             "slug":"prisma-nodejs",
-            "content":"prisma-nodejs.html",
+            "content":"prisma_nodejs.html",
             "date":"04-10-2025",
             "category":"database",
             "preview":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum libero in turpis euismod dictum."

@@ -1,6 +1,5 @@
 
-const {months} = require("api.js")
-
+import { months } from "./api.js"
 
 
 
@@ -20,7 +19,7 @@ function postHeader(title, date){
         <div class="post-header">
             <span class="post-title">${title}</span>
             <span class="post-date">
-                ${months[date.split("-")[0]+1]+" "+date.split("-")[1]+", "+date.split("-")[2]}
+                ${months[parseInt(date.split("-")[0])-1]+" "+date.split("-")[1]+", "+date.split("-")[2]}
             </span>
         </div>
     `
@@ -45,7 +44,7 @@ function postList(posts){
                     <div class="post-card">
                         <a href="/posts/${item.slug}" class="post-title">${item.title}</a>
                         <span class="post-date">
-                            ${months[item.date.split("-")[0]+1]+" "+item.date.split("-")[1]+", "+item.date.split("-")[2]}
+                            ${months[parseInt(item.date.split("-")[0])-1]+" "+item.date.split("-")[1]+", "+item.date.split("-")[2]}
                         </span>
                         <p class="post-preview">${item.preview}</p>  
                         <a href="/posts/${item.slug}" class="read-more">Read More</a>  
@@ -162,11 +161,7 @@ function homePage(categories, posts){
 }
 
 
-module.exports = {
-    postPage,
-    categoryPage,
-    homePage
-}
+export {homePage, categoryPage, postPage}
 
 
 
