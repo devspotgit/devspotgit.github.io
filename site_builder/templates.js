@@ -6,7 +6,6 @@ import { months } from "./api.js"
 // template parts
 
 function categoryHeader(title){
-
     return `
         <div class="category-header">${title}</div>
     `
@@ -14,7 +13,6 @@ function categoryHeader(title){
 
 
 function postHeader(title, date){
-
     return `
         <div class="post-header">
             <span class="post-title">${title}</span>
@@ -27,7 +25,6 @@ function postHeader(title, date){
 
 
 function footer(){
-
     return `
         <div class="footer">Devspot</div>    
     `
@@ -36,7 +33,6 @@ function footer(){
 
 
 function postList(posts){
-
     return `
         <div class="post-list">
             ${
@@ -57,7 +53,6 @@ function postList(posts){
 
 
 function postContent(content){
-
     return `
         <div class="post-content">${content}</div>
     `
@@ -65,7 +60,6 @@ function postContent(content){
 
 
 function side(categories){
-
     return `
         <div class="side">
             <a href="/">Desvspot</a>
@@ -86,7 +80,6 @@ function side(categories){
 // full template pages
 
 function postPage(post, content, categories){
-
     return`
        <!DOCTYPE html>
         <html lang="en">
@@ -111,7 +104,6 @@ function postPage(post, content, categories){
 
 
 function categoryPage(category, categories, posts){
-
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -137,7 +129,6 @@ function categoryPage(category, categories, posts){
 
 
 function homePage(categories, posts){
-
     return `
         <!DOCTYPE html>
         <html lang="en">
