@@ -6,29 +6,33 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <link rel="stylesheet" href="/static/css/main.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <title>SSR vs CSR : What’s Better for Performance ?</title>
+            <title>SSR vs CSR</title>
         </head>
         <body>
             <div class="main">
                 
         <div class="side">
-            <a href="/">Desvspot</a>
+            <div class="side-top">
+                <button class="side-close"><i class="fa-solid fa-xmark"></i></button>
+                <a class="site-name" href="/">Desvspot</a>
+            </div>
             <div class="categories">
                 
-                    <a href="/categories/security">Security</a>
+                    <a href="/categories/security" class="category">Security</a>
                  
-                    <a href="/categories/web-dev">Web Development</a>
+                    <a href="/categories/web-dev" class="category">Web Development</a>
                  
-                    <a href="/categories/database">Database</a>
+                    <a href="/categories/database" class="category">Database</a>
                  
-                    <a href="/categories/programming">Programming</a>
+                    <a href="/categories/programming" class="category">Programming</a>
                 
             </div>
         </div>
     
                 
         <div class="post-header">
-            <span class="post-title">SSR vs CSR : What’s Better for Performance ?</span>
+            <button class="side-open"><i class="fa-solid fa-bars"></i></button>
+            <span class="post-title">SSR vs CSR</span>
             <span class="post-date">
                 April 25, 2025
             </span>
@@ -40,7 +44,9 @@
                 
         <div class="footer">Devspot</div>    
     
+                <div class="transparent"></div>
             </div>
+            <script src="/static/js/main.js"></script>
         </body>
         </html>
     

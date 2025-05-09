@@ -12,28 +12,34 @@
             <div class="main">
                 
         <div class="side">
-            <a href="/">Desvspot</a>
+            <div class="side-top">
+                <button class="side-close"><i class="fa-solid fa-xmark"></i></button>
+                <a class="site-name" href="/">Desvspot</a>
+            </div>
             <div class="categories">
                 
-                    <a href="/categories/security">Security</a>
+                    <a href="/categories/security" class="category">Security</a>
                  
-                    <a href="/categories/web-dev">Web Development</a>
+                    <a href="/categories/web-dev" class="category">Web Development</a>
                  
-                    <a href="/categories/database">Database</a>
+                    <a href="/categories/database" class="category">Database</a>
                  
-                    <a href="/categories/programming">Programming</a>
+                    <a href="/categories/programming" class="category">Programming</a>
                 
             </div>
         </div>
     
                 
-        <div class="category-header">Security</div>
+        <div class="category-header">
+            <button class="side-open"><i class="fa-solid fa-bars"></i></button>
+            <span class="category-title">Security</span>
+        </div>
     
                 
         <div class="post-list">
             
                     <div class="post-card">
-                        <a href="/posts/oauth" class="post-title">What is OAuth ?</a>
+                        <a href="/posts/oauth" class="post-title">OAuth</a>
                         <span class="post-date">
                             February 14, 2025
                         </span>
@@ -46,7 +52,9 @@
                 
         <div class="footer">Devspot</div>    
     
+                <div class="transparent"></div>
             </div>
+            <script src="/static/js/main.js"></script>
         </body>
         </html>
     
